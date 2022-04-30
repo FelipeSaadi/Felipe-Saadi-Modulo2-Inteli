@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     color: #ECD2C7;
-    o: hidden;
 }
 
 #container {
@@ -57,7 +56,8 @@ body {
     font-size: 18px;
 }
 
-.section-description {
+.section-description,
+a {
     font-size: 16px;
     color: #d3d3d3;
     margin-top: 0px;
@@ -127,4 +127,9 @@ body {
     color: #676870;
     font-size: 14px;
     font-weight: 400px;
+}
+
+.main-sections .section-description {
+    width: 100%;
+    padding-left: 20px;
 }
