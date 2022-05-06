@@ -11,6 +11,9 @@ body {
     background-color: #484E5D;
     color: #ECD2C7;
 }
+#sidebar > :last-child {
+    margin-bottom: 20px;
+}
 
 #sidebar ul {
     list-style-type: "- ";
@@ -38,7 +41,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #profile-name-title {
@@ -69,7 +73,7 @@ a {
     width: 80%;
     background-color: #EBDDD6;
     height: 3px;
-    margin: 40px 0 20px 0;
+    margin: 20px 0 20px 0;
 }
 
 #profile-section {
