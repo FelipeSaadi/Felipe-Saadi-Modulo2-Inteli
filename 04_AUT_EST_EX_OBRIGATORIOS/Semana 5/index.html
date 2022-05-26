@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="exercises">
+            <select name="ex-select" id="ex-select" onchange="changeExercise(this.value)">
+                <option value="exercise1">Exercício 1</option>
+                <option value="exercise2">Exercício 2</option>
+                <option value="exercise3">Exercício 3</option>
+            </select>
+
+            <div id="exercise1">
+                <div class="input-container">
+                    <label for="ex01-value1">
+                        Primeiro valor a ser calculado
+                    </label>
+                    <input id="ex01-value1" type="number" class="input-style">
+                </div>
+
+                <div class="input-container">
+                    <label for="ex01-value2">
+                        Segundo valor a ser calculado
+                    </label>
+                    <input id="ex01-value2" type="number" class="input-style">
+                </div>
+
+                <div class="button-section">
+                    <select name="operators" id="operators">
+                        <option value="+">Soma</option>
+                        <option value="-">Subtração</option>
+                        <option value="*">Multiplicação</option>
+                        <option value="/">Divisão</option>
+                        <option value="//">Divisão Inteira</option>
+                        <option value="%">Resto da Divisão</option>
+                    </select>
+                    <button onclick="calculate()">Calcular</button>
+
+                    <div id="ex01-result"></div>
+                </div>
+
+            </div>
+            <div id="exercise2" hidden>
+                <div id="ex02-container">
+                    <label for="ex02-recieve">Quantos reais deseja receber?</label>
+                    <input id="ex02-value" type="number">
+                    <button id="ex02-button" onclick="generateBills()">Gerar notas</button>
+                    <div id="ex02-result"></div>
+                </div>
+            </div>
+            <div id="exercise3" hidden>
+                <div class="input-container">
+                    <label for="ex03-value1">
+                        Digite os valores separados por vírgula
+                    </label>
+                    <input id="ex03-value1" type="text" class="input-style">
+                </div>
+
+                <div class="input-container">
+                    <label for="ex03-value2">
+                        Qual dos valores anteriores é o valor foco?
+                    </label>
+                    <input id="ex03-value2" type="number" class="input-style">
+                </div>
+
+                <div class="button-section">
+                    <div id="ex03-escription" for="button">
+                        Gerar lista ordenada e o valor foco
+                    </div>
+                    <button id="ex03-button" onclick="findValue()">Gerar</button>
+                    <div id="ex03-result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
