@@ -1,5 +1,5 @@
-function goTo(link) {
-    window.location.href = link
+function returnPage() {
+    window.history.back()
 }
 
 let lastExercise
