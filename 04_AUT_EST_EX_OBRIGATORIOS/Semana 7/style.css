@@ -36,14 +36,13 @@ header button {
     align-items: center;
     justify-content: center;
 }
-#exercises {
+.exercise-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 #ex-select {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 select, input, button {
     background-color: #f5f5dc;
@@ -51,7 +50,17 @@ select, input, button {
     border-radius: 10px;
 }
 .input-container {
+    margin-top: 20px;
     margin-bottom: 20px;
+}
+#exercise3 .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#exercise3 .input-container input {
+    margin-top: 10px;
+    width: 50%;
 }
 .button-section {
     display: flex;
@@ -75,5 +84,13 @@ select, input, button {
 }
 
 #ex03-button, #ex03-result, #ex03-description {
+    margin-top: 20px;
+}
+
+#ex04-button, #ex04-result {
+    margin-top: 20px;
+}
+
+.result-style {
     margin-top: 20px;
 }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button value="/" onclick="goTo(this.value)">Voltar</button>
+        </header>
+        <div id="exercises">
+            <select name="ex-select" id="ex-select" onchange="changeExercise(this.value)">
+                <option value="exercise1">Exercício 1</option>
+                <option value="exercise2">Exercício 2</option>
+                <option value="exercise3">Exercício 3</option>
+                <option value="exercise4">Exercício 4</option>
+                <option value="exercise5">Exercício 5</option>
+            </select>
+
+            <div id="exercise1">
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web na qual o usuário possa informar a quantidade de um produto em um valor inteiro e, por meio de dois botões, um que adiciona uma unidade e um que subtraia uma unidade, o valor do campo da quantidade possa ser manipulado.</div>
+
+                    <div class="input-container">
+                        <label for="ex01-value1">
+                            Quantidade de Produtos
+                        </label>
+                        <input id="ex01-qty" type="number" class="input-style">
+                    </div>
+
+                    <div class="buttons">
+                        <button id="increaseQty" onclick="increaseQty()">Aumentar Quantidade</button>
+                        <button id="decreaseQty" onclick="decreaseQty()">Diminuir Quantidade</button>
+                    </div>
+                </div>
+            </div>
+            <div id="exercise2" hidden>
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web na qual o usuário possa digitar dois valores, cada um em uma caixa de texto. Quando o usuário indicar que deseja que os valores sejam trocados (clicando no botão "Troca"), os valores contidos nas caixas de texto são trocados, ou seja, se na primeira caixa de texto estiver escrito "IPT" e na segunda, "Inteli", quando solicitada a troca, a primeira caixa de texto deve contar "Inteli" e a segunda, "IPT".</div>
+
+                    <div class="input-container">
+                        <label for="ex02-input1">
+                            Valor 1
+                        </label>
+                        <input id="ex02-input1" type="text" class="input-style">
+                    </div>
+    
+                    <div class="input-container">
+                        <label for="ex02-input2">
+                            Valor 2
+                        </label>
+                        <input id="ex02-input2" type="text" class="input-style">
+                    </div>
+    
+                    <button id="ex02-button" onclick="changeValues()">Trocar Valores</button>
+                </div>
+            </div>
+            <div id="exercise3" hidden>
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web na qual o usuário deva escrever em um campo de texto o número de seu celular no formato "(XX)XXXXX-XXXX" e, caso o formato não seja respeitado, o usuário seja notificado.</div>
+
+                    <div class="input-container">
+                        <label for="ex03-value">
+                           Digite o seu número no formato (XX)XXXXX-XXXX.
+                           Aperte "ENTER" para verificar.
+                        </label>
+                        <input id="ex03-value" 
+                            type="text" 
+                            class="input-style" 
+                            onchange="verifyFormat(this.value)" 
+                            placeholder="(11)99999-9999"
+                        >
+                    </div>
+                    <div id="ex03-format-result"></div>
+                </div>
+            </div>
+
+            <div id="exercise4" hidden>
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web que permita ao usuário informar a quantidade de pessoas (número inteiro inteiro) e o período (Noturno ou Diurno) e, quando o usuário indicar que deseja que o cálculo seja realizado (pressionar um botão), mostre o total da compra de acordo com as condições abaixo:
+
+                        <br>
+                        <br>- Se vôo diurno, 200 por pessoa. Se mais do que 50 pessoas, desconto de 40% por pessoa.
+                        <br>- Se vôo noturno, 100 por pessoa. Se mais do que 50 pessoas, desconto de 20% por pessoa.
+                    </div>
+
+                    <div class="input-container">
+                        <label for="ex4-qty">
+                           Digite a quantidade de pessoas
+                        </label>
+                        <input id="ex04-qty" 
+                            type="number" 
+                            class="input-style"  
+                        >
+                    </div>
+                    <div class="button-section">
+                        <select name="ex04-period" id="ex04-period">
+                            <option value="default" selected hidden>Selecione o período</option>
+                            <option value="noturno">Noturno</option>
+                            <option value="diurno">Diurno</option>
+                        </select>
+                        <button id="ex04-button" onclick="flyPrice()">Calcular</button>
+    
+                    </div>
+                    <div id="ex04-result"></div>
+                </div>
+            </div>
+
+            <div id="exercise5" hidden>
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web na qual o usuário informe a quantidade de alunos e a nota de cada aluno na prova e no trabalho. Quando o ususário finalizar o fornecimento de todas as informações e solicitar o cálculo, mostre:
+                        <br>
+                        <br>a média de cada aluno, calculada considerando peso 2 para a prova e 3 para o trabalho;
+                        <br>a média geral, considerando todos os alunos;
+                        <br>a média aritméticas das notas de prova;
+                        <br>a média aritméticas das notas de trabalho;
+                        <br>a menor e a maior notas de prova;
+                        <br>a menor e a maior notas de trabalho. Obs: note que a quantidade de campos para inserção das notas de cada aluno depende da quantidade de alunos informada.
+                    </div>
+
+                    <div class="input-container">
+                        <label for="ex05-qty">
+                           Digite a quantidade de alunos
+                        </label>
+                        <input id="ex05-qty" 
+                            type="text" 
+                            class="input-style"  
+                        >
+                        <button id="ex05-button" onclick="generateInputs()">Aplicar</button>
+                    </div>
+                    <div id="ex05-inputs-section"></div>
+                    <div id="ex05-result" class="result-style"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

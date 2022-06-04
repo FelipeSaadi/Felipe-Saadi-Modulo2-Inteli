@@ -1,3 +1,7 @@
+function goTo(link) {
+    window.location.href = link
+}
+
 let lastExercise
 function changeExercise(value) {
     if(lastExercise) {
