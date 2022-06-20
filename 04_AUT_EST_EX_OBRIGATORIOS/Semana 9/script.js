@@ -105,114 +105,41 @@ function showFibonacci() {
 }
 
 // Ex 05
-function generateInputs() {
-    document.getElementById("ex05-inputs-section").innerHTML = ''
-    let studentsQty = Number(document.getElementById("ex05-qty").value)
-    let inputs = []
+function getInterval() {
+    let min = Number(document.getElementById("ex05-value1").value)
+    let max = Number(document.getElementById("ex05-value2").value)
+    let prime = []
+    let resultText = ``
 
-    if (studentsQty) {
-        for (i = 1; i <= studentsQty; i++) {
-            inputs.push(
-                `
-                    <div class="input-container">
-                        <label for="ex05-student${i}">
-                            Nota Prova do Aluno ${i}
-                        </label>
-                        <input id="ex05-student${i}-trial" 
-                            type="text" 
-                            class="input-style"  
-                        >
-                        <label for="ex05-student${i}-homework">
-                            Nota Trabalho do Aluno ${i}
-                        </label>
-                        <input id="ex05-student${i}-homework" 
-                            type="text" 
-                            class="input-style"  
-                        >
-                    </div>
-                `
-            )
+    if(max - min >= 0 && max >=2) {
+        for (i = min; i <= max; i++) {
+            if (i > 1) {
+                if (isPrime(i)) {
+                    prime.push(i)
+                }
+            }
         }
-        inputs.forEach(input => {
-            document.getElementById("ex05-inputs-section").innerHTML += input
-        })
-        document.getElementById("ex05-inputs-section").innerHTML += `<button id="ex05-button" onclick="calculateGrades()">Calcular</button>`
+        for (i = 0; i < prime.length; i++) {
+            if (i < prime.length-1) {
+                resultText += `${prime[i]}, `
+            }
+            else {
+                resultText += prime[i]
+            }
+        }
+    
+        document.getElementById("ex05-result").innerText = `O resultado é a sequencia dos primos ${resultText}.`
+    }
+    else {
+        document.getElementById("ex05-result").innerText = `Valores inválidos.`
     }
 }
 
-function calculateGrades() {
-    let studentsQty = Number(document.getElementById("ex05-qty").value)
-    let studentAverage = []
-    let studentsAverage = 0
-    let testGradeAverage = 0
-    let homeworkAverage = 0
-    let lowestTestGrade = 0
-    let highestTestGrade = 0
-    let lowestHomeworkGrade = 0
-    let highestHomeworkGrade = 0
-    let result = ''
-
-    for (i = 1; i <= studentsQty; i++) {
-        console.log(i)
-        let grade = Number(document.getElementById(`ex05-student${i}-trial`).value)
-        let homework = Number(document.getElementById(`ex05-student${i}-homework`).value)
-        let average = (grade * 2 + homework * 3) / (2 + 3)
-        studentAverage.push(average)
-
-        if (!lowestTestGrade || grade < lowestTestGrade) {
-            lowestTestGrade = grade
+function isPrime(n) {
+    for (d = 2; d < n; d++) {
+        if (n % d == 0) {
+            return false
         }
-        if (!highestTestGrade || grade > highestTestGrade) {
-            highestTestGrade = grade
-        }
-
-        if (!lowestHomeworkGrade || homework < lowestHomeworkGrade) {
-            lowestHomeworkGrade = homework
-        }
-        if (!highestHomeworkGrade || homework > highestHomeworkGrade) {
-            highestHomeworkGrade = homework
-        }
-
-        studentsAverage += average
-        testGradeAverage += grade
-        homeworkAverage += homework
     }
-    studentsAverage = studentsAverage / studentsQty
-    testGradeAverage = testGradeAverage / studentsQty
-    homeworkAverage = homeworkAverage / studentsQty
-
-    for (i = 0; i < studentsQty; i++) {
-        result += `
-            <div class="result-style">
-                Media do estudante ${i + 1}: ${studentAverage[i]}
-            </div>
-        `
-    }
-    document.getElementById("ex05-result").innerHTML = result
-
-    document.getElementById("ex05-result").innerHTML += `
-        <div class="result-style">
-            Media dos estudantes: ${studentsAverage}
-        </div>
-        <div class="result-style">
-            Media das provas: ${testGradeAverage}
-        </div>
-        <div class="result-style">
-            Media das trabalhos: ${homeworkAverage}
-        </div>
-        </div>
-        <div class="result-style">
-            Menor nota de prova: ${lowestTestGrade}
-        </div>
-        <div class="result-style">
-            Menor nota de trabalho: ${lowestHomeworkGrade}
-        </div>
-        <div class="result-style">
-            Maior nota de prova: ${highestTestGrade}
-        </div>
-        <div class="result-style">
-            Maior nota de trabalho: ${highestHomeworkGrade}
-        </div>
-
-    `
+    return true
 }

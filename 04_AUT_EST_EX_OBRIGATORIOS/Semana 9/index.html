@@ -98,27 +98,20 @@
 
             <div id="exercise5" hidden>
                 <div class="exercise-container">
-                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web na qual o usuário informe
-                        a quantidade de alunos e a nota de cada aluno na prova e no trabalho. Quando o ususário
-                        finalizar o fornecimento de todas as informações e solicitar o cálculo, mostre:
-                        <br>
-                        <br>a média de cada aluno, calculada considerando peso 2 para a prova e 3 para o trabalho;
-                        <br>a média geral, considerando todos os alunos;
-                        <br>a média aritméticas das notas de prova;
-                        <br>a média aritméticas das notas de trabalho;
-                        <br>a menor e a maior notas de prova;
-                        <br>a menor e a maior notas de trabalho. Obs: note que a quantidade de campos para inserção das
-                        notas de cada aluno depende da quantidade de alunos informada.
-                    </div>
+                    <div class="description"><b>Descrição do Desafio:</b> Elabore um programa que, dados dois números naturais n1 e n2, representando um intervalo fechado [n1, n2], exibe todos os números primos no intervalo.</div>
 
                     <div class="input-container">
-                        <label for="ex05-qty">
-                            Digite a quantidade de alunos
+                        <label for="ex05-value1">
+                            Numero 1
                         </label>
-                        <input id="ex05-qty" type="text" class="input-style" min="1">
-                        <button id="ex05-button" onclick="generateInputs()">Aplicar</button>
+                        <input id="ex05-value1" type="text" class="input-style">
+                        <label for="ex05-value2">
+                            Numero 2
+                        </label>
+                        <input id="ex05-value2" type="text" class="input-style">
                     </div>
-                    <div id="ex05-inputs-section"></div>
+                    <button id="ex05-button" onclick="getInterval()">Gerar Intervalo</button>
+
                     <div id="ex05-result" class="result-style"></div>
                 </div>
             </div>
