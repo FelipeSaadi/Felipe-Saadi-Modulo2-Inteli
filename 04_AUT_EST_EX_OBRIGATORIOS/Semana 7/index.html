@@ -30,7 +30,7 @@
                         <label for="ex01-value1">
                             Quantidade de Produtos
                         </label>
-                        <input id="ex01-qty" type="number" class="input-style">
+                        <input id="ex01-qty" type="number" class="input-style" min="0">
                     </div>
 
                     <div class="buttons">
@@ -95,7 +95,8 @@
                         </label>
                         <input id="ex04-qty" 
                             type="number" 
-                            class="input-style"  
+                            class="input-style"
+                            min="1"
                         >
                     </div>
                     <div class="button-section">
@@ -129,7 +130,8 @@
                         </label>
                         <input id="ex05-qty" 
                             type="text" 
-                            class="input-style"  
+                            class="input-style"
+                            min="1"  
                         >
                         <button id="ex05-button" onclick="generateInputs()">Aplicar</button>
                     </div>

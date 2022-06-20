@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: bisque;
+    font-size: 20px;
+    overflow-x: hidden;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 40px;
+    margin: 0 !important;
+    background-color: rgb(228, 203, 172);
+    border-bottom: 1px black solid;
+}
+header button {
+    margin-left: 10px;
+}
+#exercises {
+    margin-top: 70px;
+    margin-bottom: 40px;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.exercise-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#ex-select {
+    margin-bottom: 20px;
+}
+select, input, button {
+    background-color: #f5f5dc;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.input-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#exercise3 .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#exercise3 .input-container input {
+    margin-top: 10px;
+    width: 50%;
+}
+.button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#operators {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#ex01-result {
+    margin-top: 20px;
+}
+#ex02-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#ex02-button, #ex02-result, #ex02-description {
+    margin-top: 20px;
+}
+
+#ex03-button, #ex03-result, #ex03-description {
+    margin-top: 20px;
+}
+
+#ex04-button, #ex04-result {
+    margin-top: 20px;
+}
+
+.result-style {
+    margin-top: 20px;
+}

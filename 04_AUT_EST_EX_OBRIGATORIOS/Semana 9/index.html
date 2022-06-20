@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <button value="/" onclick="returnPage()">Voltar</button>
+        </header>
+        <div id="exercises">
+            <select name="ex-select" id="ex-select" onchange="changeExercise(this.value)">
+                <option value="exercise1">Exercício 1</option>
+                <option value="exercise2">Exercício 2</option>
+                <option value="exercise3">Exercício 3</option>
+                <option value="exercise4">Exercício 4</option>
+                <option value="exercise5">Exercício 5</option>
+            </select>
+
+            <div id="exercise1">
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web na qual o usuário informe
+                        um número inteiro de três dígitos e quando o usuário indicar que deseja que o cálculo seja
+                        realizado (pressionar um botão), seja exibido se o dígito da centena é par ou ímpar.</div>
+
+                    <div class="input-container">
+                        <label for="ex01-value1">
+                            Número de 3 dígitos
+                        </label>
+                        <input id="ex01-number" type="number" class="input-style" min="100" max="999" maxlength="3">
+                    </div>
+                    <div class="buttons">
+                        <button id="verify-hundred" onclick="verifyHundred()">Verificar Centena</button>
+                    </div>
+
+                    <div id="ex01-result" class="result-style"></div>
+                </div>
+            </div>
+            <div id="exercise2" hidden>
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web na qual o usuário informe
+                        um número inteiro positivo e quando o usuário indicar que deseja que o cálculo seja realizado
+                        (pressionar um botão), seja exibida a soma de seus dígitos.</div>
+
+                    <div class="input-container">
+                        <label for="ex02-input1">
+                            Número inteiro e positivo
+                        </label>
+                        <input id="ex02-number" type="text" class="input-style">
+                    </div>
+                    <button id="ex02-button" onclick="sumNumbers()">Somar Número</button>
+
+                    <div id="ex02-result" class="result-style"></div>
+                </div>
+            </div>
+            <div id="exercise3" hidden>
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web na qual o usuário informe
+                        três nomes e quando o usuário indicar que deseja que o cálculo seja realizado (pressionar um
+                        botão), os nomes são exibidos em ordem alfabética crescente.</div>
+
+                    <div class="input-container">
+                        <label for="ex03-names">
+                            Três nomes (separados por vírgulas ou espaços)
+                        </label>
+                        <input id="ex03-names" type="text" class="input-style">
+                    </div>
+                    <button id="ex02-button" onclick="orderNames()">Ordernar Nomes</button>
+
+                    <div id="ex03-result"></div>
+                </div>
+            </div>
+
+            <div id="exercise4" hidden>
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> A série de Fibonacci é formada pela sequência
+                        1, 1, 2, 3, 5, 8, 13, 21, 34, ... Escreva um programa que apresente a série de Fibonacci até o
+                        n-ésimo termo (n > 0).</div>
+
+                    <div class="input-container">
+                        <label for="ex4-qty">
+                            N-ésimo número fibonacci a ser lido
+                        </label>
+                        <input id="ex04-number" type="number" class="input-style" min="1">
+                    </div>
+                    <button id="ex04-button" onclick="showFibonacci()">Calcular</button>
+
+                    <div id="ex04-result"></div>
+                </div>
+            </div>
+
+            <div id="exercise5" hidden>
+                <div class="exercise-container">
+                    <div class="description"><b>Descrição do Desafio:</b> Crie uma página web na qual o usuário informe
+                        a quantidade de alunos e a nota de cada aluno na prova e no trabalho. Quando o ususário
+                        finalizar o fornecimento de todas as informações e solicitar o cálculo, mostre:
+                        <br>
+                        <br>a média de cada aluno, calculada considerando peso 2 para a prova e 3 para o trabalho;
+                        <br>a média geral, considerando todos os alunos;
+                        <br>a média aritméticas das notas de prova;
+                        <br>a média aritméticas das notas de trabalho;
+                        <br>a menor e a maior notas de prova;
+                        <br>a menor e a maior notas de trabalho. Obs: note que a quantidade de campos para inserção das
+                        notas de cada aluno depende da quantidade de alunos informada.
+                    </div>
+
+                    <div class="input-container">
+                        <label for="ex05-qty">
+                            Digite a quantidade de alunos
+                        </label>
+                        <input id="ex05-qty" type="text" class="input-style" min="1">
+                        <button id="ex05-button" onclick="generateInputs()">Aplicar</button>
+                    </div>
+                    <div id="ex05-inputs-section"></div>
+                    <div id="ex05-result" class="result-style"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
