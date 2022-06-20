@@ -102,6 +102,9 @@ function showFibonacci() {
 
         document.getElementById("ex04-result").innerText = `O resultado da sequência fibonacci é ${resultText}.`
     }
+    else {
+        document.getElementById("ex04-result").innerText = `Valor Inválido.`
+    }
 }
 
 // Ex 05
